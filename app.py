@@ -3,10 +3,13 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
 
-app = Flask(__name__ )
-app.config("SECRET_KEY") = os.getenv("SECRET_KEY")
+# Load environment variables from .env file
+load_dotenv()
 
-@app.route(["/", methods="GET"])
+app = Flask(__name__ )
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+
+@app.route("/", methods=["GET"])
 def home():
     #Write the code for the function here
 
