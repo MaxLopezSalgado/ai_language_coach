@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__ )
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
-@app.route("/", methods=["GET"])
+@app.route("/", methods=["GET", "POST"])
 def home():
     #Write the code for the function here
 
